@@ -57,7 +57,7 @@ public abstract class ConversationUI implements Listener {
 		playerMsg = playerMsg.replaceAll("%msg", conversation.getDisplayedMessage().getMessage());
 		playerMsg = playerMsg.replaceAll("%player", conversation.getPlayer().getName());
 		playerMsg = playerMsg.replaceAll("%npc", conversation.getNPGuy().getNPC().getName());
-		playerMsg = playerMsg.replace('&', 'ยง');
+		playerMsg = playerMsg.replace('&', 'ง');
 		if(!conversation.getDisplayedMessage().getMessage().equals("")) {
 			conversation.getPlayer().sendMessage(playerMsg);
 		}
@@ -68,7 +68,7 @@ public abstract class ConversationUI implements Listener {
 			npcMsg = npcMsg.replaceAll("%msg", conversation.getDisplayedMessage().getNPCMessage().getMessage());
 			npcMsg = npcMsg.replaceAll("%player", conversation.getPlayer().getName());
 			npcMsg = npcMsg.replaceAll("%npc", conversation.getNPGuy().getNPC().getName());
-			npcMsg = npcMsg.replace('&', 'ยง');
+			npcMsg = npcMsg.replace('&', 'ง');
 			final String final_npcMsg = npcMsg;
 
 			Bukkit.getScheduler().runTaskLater(NPGuys.getPlugin(), new Runnable() {

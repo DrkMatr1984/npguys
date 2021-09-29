@@ -10,7 +10,7 @@ ui:
   configs:
     scoreboard:
       headline: "Your answer"
-      use-scrollback: false
+      use-scrollback: true
     boss_healthbar:
       use-scrollback: false
 dialogues:

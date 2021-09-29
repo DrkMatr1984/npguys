@@ -44,7 +44,6 @@ import goldob.npguys.exception.UIInitializationFailedException;
 import goldob.npguys.exception.UIMissingException;
 import goldob.npguys.quest.QuestHandler;
 import goldob.npguys.quest.handler.QuesterHandler;
-import goldob.npguys.quest.handler.QuestsHandler;
 import goldob.npguys.requirement.Requirement;
 import goldob.npguys.ui.ConversationUI;
 import me.blackvein.quests.Quests;
@@ -110,13 +109,6 @@ public class ElementManager {
 				return;
 			}
 		}
-		if (plugin.getServer().getPluginManager().isPluginEnabled("Quests")) {
-			Plugin questsPlugin = plugin.getServer().getPluginManager().getPlugin("Quests");
-			if(questsPlugin instanceof Quests) {
-				questHandler = new QuestsHandler((Quests)questsPlugin);
-				return;
-			}
-		}
 	}
 
 	private static void setupCitizens(NPGuys plugin) {
@@ -135,7 +127,7 @@ public class ElementManager {
 	
 	private static void setupHeroes(NPGuys plugin) {
 		if(plugin.getServer().getPluginManager().isPluginEnabled("Heroes")) {
-			heroesCharacterManager = Heroes.getInstance().getCharacterManager();
+			heroesCharacterManager = getHeroesCharacterManager();
 		}
 	}
 	
